@@ -5,7 +5,7 @@
  */
 void major_trouble(void)
 {
-	fprintf(stderr,"hls: Error: ");
+	fprintf(stderr, "hls: Error: ");
 	perror("");
 	exit(EXIT_FAILURE);
 }

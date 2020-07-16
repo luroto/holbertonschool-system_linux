@@ -1,4 +1,12 @@
 #include "ls.h"
+/**
+ *main - The main handler for my custom ls function
+ *@ac: number of arguments received
+ *@av: pointer to the arguments from the command line
+ *Return: 0 if sucessful, otherwise 1
+ *
+ *
+ */
 int main(int ac, char **av)
 {
 	int i;

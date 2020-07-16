@@ -5,7 +5,7 @@
  *@s: pointer of source
  *@c: character to be locate
  *
- *Return: 1 if the char is founded at least once, otherwise 0 
+ *Return: 1 if the char is founded at least once, otherwise 0
  */
 int _strchr(char *s, char c)
 {
