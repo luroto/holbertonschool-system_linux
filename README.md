@@ -1,2 +1,2 @@
-# holbertonschool-system_linux
-# holbertonschool-system_linux
+This is the repository for the low level and algorithmics specialiation
+in Holberton
