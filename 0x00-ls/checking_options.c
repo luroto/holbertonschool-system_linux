@@ -1,5 +1,9 @@
 #include "ls.h"
-
+/**
+ *checking_options - Ensures that the options only has the allowed ones
+ *@arguments: the av[x] argument suspecte to hold the options
+ *Return: the av[x] that contains the options
+ */
 char *checking_options(char **arguments)
 {
 	int i, j, k;
