@@ -21,12 +21,12 @@ int just_ls(char *pathname, int ac)
 		if (dir == NULL)
 			denied_access(pathname, ac);
 		entry = readdir(dir);
-		while (entry != NULL)
+		for (entry = readdir(dir); entry != NULL; entry = readdir(dir))
 		{
 			if (entry->d_name[0] != '.'  && entry->d_name[1] != '.')
 				printf("%s", entry->d_name);
-			printf("\t");
-			entry = readdir(dir);
+			if (entry != NULL) 
+				printf("\t");
 		}
 		if (closedir(dir) != 0)
 			major_trouble();
