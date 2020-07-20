@@ -1,7 +1,8 @@
 #include "ls.h"
 /**
  * getting_stats - Checking directories content
- * @h: path to be researched
+ * @h: Pointer to a DLL for entry info
+ * @dph: path to be researched
  * @options: Printing options
  * Return: 0 if sucessful, otherwise 1
  */
@@ -18,10 +19,9 @@ int getting_stats(dfilelist_t *h, char *dph, char *options)
 	dirs = NULL;
 	for (a = h; a != NULL; a = a->next)
 	{
-		fullpath = NULL;
 		if (_strcmp(dph, "/") == 0)
 		{
-			fullpath = malloc (_strlen(dph) + _strlen(a->name) + 2);
+			fullpath = malloc(_strlen(dph) + _strlen(a->name) + 2);
 			_strcpy(fullpath, dph);
 			_strcat(fullpath, a->name);
 		}
@@ -40,7 +40,7 @@ int getting_stats(dfilelist_t *h, char *dph, char *options)
 			addfileinfo(&dirs, a->name, info);
 		free(fullpath);
 	}
-	if(files != NULL && dirs != NULL)
+	if (files != NULL && dirs != NULL)
 		link_filedatas(&files, dirs);
 	else if (files == NULL)
 		files = dirs;
