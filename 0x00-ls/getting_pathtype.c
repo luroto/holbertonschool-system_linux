@@ -23,7 +23,7 @@ int getting_pathtype(int ac, char **av,  char *options)
 			name = av[i];
 			if (lstat(av[i], &info) != 0)
 			{
-				denied_access(name, ac);
+				denied_access(name, ac, 1);
 			}
 			else if (S_ISREG(info.st_mode) || S_ISLNK(info.st_mode))
 				addfileinfo(&files, name, info);
@@ -35,8 +35,11 @@ int getting_pathtype(int ac, char **av,  char *options)
 	aux = dirs;
 	while (aux != NULL)
 	{
-		printf("%s:\n", aux->name);
+		if (ac > 2)
+			printf("%s:\n", aux->name);
 		getting_info_dir(0, aux->name, options);
+		if (ac > 2 && aux->next != NULL)
+			printf("\n");
 		aux = aux->next;
 	}
 	free_fileinfo(files);
