@@ -8,7 +8,7 @@
 
 int denied_access(char *pathname, int ac)
 {
-	fprintf(stderr, "hls: cannot access '%s': ", pathname);
+	fprintf(stderr, "hls: cannot access %s: ", pathname);
 	perror("");
 	if (ac == 2)
 		exit(EXIT_FAILURE);
