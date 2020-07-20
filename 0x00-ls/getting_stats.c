@@ -33,7 +33,7 @@ int getting_stats(dfilelist_t *h, char *dph, char *options)
 			_strcat(fullpath, a->name);
 		}
 		if (lstat(fullpath, &info) != 0)
-			denied_access(fullpath, 0);
+			denied_access(fullpath, 0, 2);
 		if (S_ISREG(info.st_mode) || S_ISLNK(info.st_mode))
 			addfileinfo(&files, a->name, info);
 		if (S_ISDIR(info.st_mode))

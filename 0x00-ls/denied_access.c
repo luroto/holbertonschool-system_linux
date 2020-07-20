@@ -15,7 +15,6 @@ int denied_access(char *pathname, int ac, int e)
 		perror("");
 		if (ac == 2)
 			exit(EXIT_FAILURE);
-		return (0);
 	}
 	if (e == 2)
 	{
@@ -23,6 +22,6 @@ int denied_access(char *pathname, int ac, int e)
 		perror("");
 		if (ac == 2)
 			exit(EXIT_FAILURE);
-		return (0);
 	}
+	return (0);
 }
