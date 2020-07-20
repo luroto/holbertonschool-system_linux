@@ -19,7 +19,7 @@ char *checking_options(char **arguments)
 			for (j = 1; arguments[i][j] != '\0'; j++)
 			{
 				k = valid_options(options, arguments[i][j]);
-				if (k != 0)
+				if (k != 1)
 				{
 					fprintf(stderr, "ls: the '%c' option is not valid\n", arguments[i][j]);
 					exit(EXIT_FAILURE);
