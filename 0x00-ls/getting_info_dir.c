@@ -16,7 +16,7 @@ int getting_info_dir(int ac, char *pathname, char *options)
 
 	dir = opendir(pathname);
 	if (dir == NULL)
-		denied_access(pathname, ac, 1);
+		return (denied_access(pathname, ac, 1));
 	hfl = NULL;
 	hdr = NULL;
 	for (entry = readdir(dir); entry != NULL; entry = readdir(dir))
