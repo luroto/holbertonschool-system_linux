@@ -18,7 +18,7 @@ int denied_access(char *pathname, int ac, int e)
 	}
 	if (e == 2)
 	{
-		fprintf(stderr, "hls: cannot open directory %s", pathname);
+		fprintf(stderr, "hls: cannot open directory %s: ", pathname);
 		perror("");
 		if (ac == 2)
 			exit(EXIT_FAILURE);

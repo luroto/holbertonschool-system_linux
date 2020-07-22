@@ -9,13 +9,10 @@
 int getting_pathtype(int ac, char **av,  char *options)
 {
 	int i;
-	dfileinfo_t *files, *dirs, *aux;
+	dfileinfo_t *files = NULL, *dirs = NULL, *aux = NULL;
 	struct stat info;
 	char *name;
 
-	files = NULL;
-	dirs = NULL;
-	aux = NULL;
 	for (i = 1; i < ac; i++)
 	{
 		if (av[i] != options)
@@ -35,7 +32,7 @@ int getting_pathtype(int ac, char **av,  char *options)
 	aux = dirs;
 	while (aux != NULL)
 	{
-		if (ac > 2)
+		if ((ac > 2 && options == NULL) || ac > 3)
 			printf("%s:\n", aux->name);
 		getting_info_dir(0, aux->name, options);
 		if (ac > 2 && aux->next != NULL)

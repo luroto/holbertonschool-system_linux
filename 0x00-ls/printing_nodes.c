@@ -24,7 +24,10 @@ int printing_nodes(const dfileinfo_t *h, char *options)
 		}
 		else
 		{
-			printing_options(h, options);
+			if (_strchr(options, 'a') == 1)
+				printing_options(h, options);
+			else
+				printing_other(h, options);
 		}
 		h = h->next;
 	}

@@ -72,5 +72,8 @@ int getting_stats(dfilelist_t *h, char *dph, char *options);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
-int printing_options(const dfileinfo_t *h, char *options);
+int printing_options(const dfileinfo_t *n, char *options);
+int printing_other(const dfileinfo_t *n, char *options);
+int printing_permissions(mode_t filemode);
+int printing_time(const struct timespec time);
 #endif

@@ -1,11 +1,12 @@
 #include "ls.h"
 /**
- *printing_options - It handle some specific options for printing
+ *printing_other - It handle some specific options for printing all but hidden
+ *files
  *@n: Pointer to the node to be printed
  *@options: selected options from av[i]
  *Return: 0
  */
-int printing_options(const dfileinfo_t *n, char *options)
+int printing_other(const dfileinfo_t *n, char *options)
 {
 	struct passwd *user;
 	struct group *group;
@@ -15,7 +16,12 @@ int printing_options(const dfileinfo_t *n, char *options)
 
 	user = getpwuid(n->user_id);
 	group = getgrgid(n->group_id);
-
+	if (_strchr(options, 'a' == 0))
+	{
+		if ((n->name[0] == '.' && _strlen(n->name) == 1) ||
+		    (n->name[0] == '.' && n->name[1] == '.'))
+			return (1);
+	}
 	if ((_strchr(options, 'A') == 1) && (S_ISDIR(n->filemode)))
 	{
 		if (oc == 1 || occ == 1)
