@@ -36,7 +36,7 @@ int getting_pathtype(int ac, char **av,  char *options)
 			printf("%s:\n", aux->name);
 		getting_info_dir(0, aux->name, options);
 		if (ac > 2 && aux->next != NULL)
-			printf("\n\n");
+			printf("\n");
 		aux = aux->next;
 	}
 	free_fileinfo(files);
