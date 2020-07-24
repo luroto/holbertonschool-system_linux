@@ -26,6 +26,8 @@ int printing_options(const dfileinfo_t *n, char *options)
 		printf("%s", n->name);
 		if (n->next != NULL)
 			printf("  ");
+		else
+			printf("\n");
 	}
 	if (_strchr(options, 'l') == 1)
 	{
