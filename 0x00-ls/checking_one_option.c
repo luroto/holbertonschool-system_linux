@@ -24,8 +24,8 @@ char *checking_one_option(char **arg)
 					exit(EXIT_FAILURE);
 				}
 			}
+			return (arg[i]);
 		}
-		return (arg[i]);
 	}
 	return (NULL);
 }
