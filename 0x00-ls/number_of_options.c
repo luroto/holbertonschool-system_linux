@@ -11,7 +11,7 @@ int number_of_options(int ac, char **av)
 
 	for (i = 1; i < ac; i++)
 	{
-		if (av[i][0] == '-')
+		if (av[i][0] == '-' && _strcmp(av[i], "-") != 0)
 			total++;
 	}
 	return (total);

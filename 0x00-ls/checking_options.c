@@ -12,11 +12,13 @@ char *checking_options(char **arguments)
 	len = 0;
 
 	for (i = 1; arguments[i] != NULL; i++)
-		if (arguments[i][0] == '-')
+	{
+		if (arguments[i][0] == '-' && _strcmp(arguments[i], "-") != 0)
 		{
 			cou++;
 			len += _strlen(arguments[i]);
 		}
+	}
 	if (cou == 0)
 		return (NULL);
 	if (cou == 1)

@@ -31,7 +31,7 @@ int printing_other(const dfileinfo_t *n, char *options)
 	{
 		printf("%s", n->name);
 		if (n->next != NULL)
-			printf(" ");
+			printf("  ");
 	}
 	if (_strchr(options, 'l') == 1)
 	{
