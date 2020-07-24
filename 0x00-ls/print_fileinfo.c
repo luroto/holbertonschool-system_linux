@@ -10,7 +10,6 @@ size_t print_fileinfo(const dfileinfo_t *h)
 
 	if (h == NULL)
 	{
-		printf("Es nullito");
 		return (contanodos);
 	}
 	else

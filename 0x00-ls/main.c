@@ -23,10 +23,9 @@ int main(int ac, char **av)
 		das = number_of_options(ac, av);
 		if (ac == 2 && options != NULL)
 			getting_info_dir(ac, ".", options);
-		if ((ac - 1) == das && options != NULL)
+		if (ac == 3 && (ac - 1) == das && options != NULL)
 		{
 			getting_info_dir(ac, ".", options);
-			free(options);
 		}
 		else
 		{

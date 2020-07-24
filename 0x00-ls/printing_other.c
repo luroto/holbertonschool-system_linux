@@ -28,7 +28,11 @@ int printing_other(const dfileinfo_t *n, char *options)
 			return (1);
 	}
 	if (_strchr(options, 'l') == 0 && _strchr(options, '1') == 0)
-		printf("%s  ", n->name);
+	{
+		printf("%s", n->name);
+		if (n->next != NULL)
+			printf(" ");
+	}
 	if (_strchr(options, 'l') == 1)
 	{
 		printf((S_ISDIR(n->filemode)) ? "d" : "-");
