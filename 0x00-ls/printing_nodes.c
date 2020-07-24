@@ -7,7 +7,6 @@
  */
 int printing_nodes(const dfileinfo_t *h, char *options)
 {
-
 	while (h != NULL)
 	{
 		if (options == NULL)

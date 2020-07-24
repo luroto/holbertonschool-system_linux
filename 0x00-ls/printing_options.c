@@ -22,7 +22,10 @@ int printing_options(const dfileinfo_t *n, char *options)
 			return (1);
 	}
 	if (_strchr(options, 'l') == 0 && _strchr(options, '1') == 0)
+	{
+		printf("entro aqui\n");
 		printf("%s  ", n->name);
+	}
 	if (_strchr(options, 'l') == 1)
 	{
 		printf((S_ISDIR(n->filemode)) ? "d" : "-");
@@ -34,7 +37,7 @@ int printing_options(const dfileinfo_t *n, char *options)
 		printing_time(n->mod_time);
 		printf("%s\n", n->name);
 	}
-	if ((_strchr(options, '1') == 1))
+	if (_strchr(options, '1') == 1 && _strchr(options, 'l') == 0)
 		printf("%s\n", n->name);
 	return (1);
 }
