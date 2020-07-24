@@ -1,10 +1,9 @@
 #include "ls.h"
 /**
  * getting_pathtype - Just printing without options
-1;5202;0c * @ac: number of arguments on the original program
+ * @ac: number of arguments on the original program
  * @av: Array of arguments from command line
  * @options: Printing options
- * @num : Number of options for ls sent
  * Return: 0 if sucessful, otherwise 1
  */
 int getting_pathtype(int ac, char **av,  char *options)
@@ -39,7 +38,8 @@ int getting_pathtype(int ac, char **av,  char *options)
 		if ((aux->next != NULL || aux->prev != NULL) || e == 1 || files != NULL)
 			printf("%s:\n", aux->name);
 		getting_info_dir(0, aux->name, options);
-		if (ac > 2 && aux->next != NULL)
+		if ((ac > 2 && aux->next != NULL) ||
+		    (aux->next == NULL && _strchr(options, 'a') == 1))
 			printf("\n");
 		if (aux->next != NULL && (options != NULL && _strchr(options, '1') == 0))
 			printf("\n");
