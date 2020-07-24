@@ -29,7 +29,7 @@ int getting_pathtype(int ac, char **av,  char *options)
 		}
 	}
 	printing_nodes(files, options);
-	if (dirs != NULL)
+	if (files != NULL && dirs != NULL)
 		printf("\n\n");
 	aux = dirs;
 	while (aux != NULL)
