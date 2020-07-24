@@ -36,6 +36,9 @@ int getting_info_dir(int ac, char *pathname, char *options)
 	if (hfl == NULL)
 		hfl = hdr;
 	getting_stats(hfl, pathname, options);
+	if (options != NULL && _strchr(options, 'a') == 1 &&
+	    _strchr(options, '1') == 0)
+		printf("\n");
 	if (hfl != NULL)
 		free_dfilelist(hfl);
 	return (0);

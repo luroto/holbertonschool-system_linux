@@ -22,10 +22,15 @@ int main(int ac, char **av)
 		options = checking_options(av);
 		das = number_of_options(ac, av);
 		if (ac == 2 && options != NULL)
-			getting_info_dir(ac, ".", options);
-		if (ac == 3 && (ac - 1) == das && options != NULL)
 		{
 			getting_info_dir(ac, ".", options);
+			return (0);
+		}
+		if (ac == 3 && (ac - 1) == das && options != NULL)
+		{
+			/** This is for ./hls -a -b*/
+			getting_info_dir(ac, ".", options);
+			return (0);
 		}
 		else
 		{
