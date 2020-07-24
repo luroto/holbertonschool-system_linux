@@ -15,7 +15,7 @@ int getting_pathtype(int ac, char **av,  char *options)
 
 	for (i = 1; i < ac; i++)
 	{
-		if (av[i] != options)
+		if (av[i][0] != '-')
 		{
 			name = av[i];
 			if (lstat(av[i], &info) != 0)
@@ -29,6 +29,8 @@ int getting_pathtype(int ac, char **av,  char *options)
 		}
 	}
 	printing_nodes(files, options);
+	if (dirs != NULL)
+		printf("\n\n");
 	aux = dirs;
 	while (aux != NULL)
 	{

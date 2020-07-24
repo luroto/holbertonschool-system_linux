@@ -51,6 +51,7 @@ typedef struct dfileinfo_s
 } dfileinfo_t;
 int main(int ac, char **av);
 char *checking_options(char **arguments);
+char *checking_one_option(char **arg);
 int valid_options(char *array, char letter);
 int _strchr(char *s, char c);
 int denied_access(char *pathname, int ac, int e);
@@ -76,4 +77,6 @@ int printing_options(const dfileinfo_t *n, char *options);
 int printing_other(const dfileinfo_t *n, char *options);
 int printing_permissions(mode_t filemode);
 int printing_time(const struct timespec time);
+char *checking_more_options(int num, int len,  char **arg);
+int number_of_options(int ac, char **av);
 #endif
