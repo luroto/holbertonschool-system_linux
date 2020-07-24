@@ -40,7 +40,7 @@ int getting_pathtype(int ac, char **av,  char *options)
 		getting_info_dir(0, aux->name, options);
 		if (ac > 2 && aux->next != NULL)
 			printf("\n");
-		if (_strchr(options, '1') == 0)
+		if (options != NULL && _strchr(options, '1') == 0)
 			printf("\n");
 		aux = aux->next;
 	}

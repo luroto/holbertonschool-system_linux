@@ -16,7 +16,7 @@ char *checking_more_options(int num, int len, char **arg)
 	opt = "1aAlrStR";
 	for (i = 1; arg[i] != NULL; i++)
 	{
-		if (arg[i][0] == '-')
+		if (arg[i][0] == '-' && _strcmp(arg[i], "-") != 0)
 		{
 			for (j = 1; arg[i][j] != '\0'; j++)
 			{
