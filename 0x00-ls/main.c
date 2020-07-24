@@ -29,7 +29,7 @@ int main(int ac, char **av)
 		}
 		else
 		{
-			getting_pathtype(ac, av, options, das);
+			getting_pathtype(ac, av, options);
 			if (das > 1)
 				free(options);
 		}

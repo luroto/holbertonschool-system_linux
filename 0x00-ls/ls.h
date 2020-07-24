@@ -63,7 +63,7 @@ void link_lists(dfilelist_t **a, dfilelist_t *b);
 size_t print_filelist(const dfilelist_t *h);
 char *_strdup(char *str);
 void link_filedatas(dfileinfo_t **a, dfileinfo_t *b);
-int getting_pathtype(int ac, char **av,  char *options, int num);
+int getting_pathtype(int ac, char **av,  char *options);
 int getting_info_dir(int ac, char *pathname, char *options);
 dfileinfo_t *addfileinfo(dfileinfo_t **h, char *n, struct stat name_info);
 int printing_nodes(const dfileinfo_t *h, char *options);
