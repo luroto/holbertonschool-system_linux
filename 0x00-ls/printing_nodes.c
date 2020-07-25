@@ -7,10 +7,9 @@
  */
 int printing_nodes(const dfileinfo_t *h, char *options)
 {
-
-	while (h != NULL)
+	if (options == NULL)
 	{
-		if (options == NULL)
+		while (h != NULL)
 		{
 			if ((h->name[0] != '.') ||
 			    (h->name[0] != '.' && h->name[1] != '.'))
@@ -21,14 +20,16 @@ int printing_nodes(const dfileinfo_t *h, char *options)
 				printf("  ");
 			if (h->next == NULL && h->name[0] != '.')
 				printf("\n");
+			h = h->next;
 		}
+		return (0);
+	}
+	while (h != NULL)
+	{
+		if (_strchr(options, 'a') == 1)
+			printing_options(h, options);
 		else
-		{
-			if (_strchr(options, 'a') == 1)
-				printing_options(h, options);
-			else
-				printing_other(h, options);
-		}
+			printing_other(h, options);
 		h = h->next;
 	}
 	return (0);

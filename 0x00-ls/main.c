@@ -26,18 +26,12 @@ int main(int ac, char **av)
 			getting_info_dir(ac, ".", options);
 			return (0);
 		}
-		if (ac == 3 && (ac - 1) == das && options != NULL)
-		{
-			/** This is for ./hls -a -b*/
+		if ((ac - 1) == das && options != NULL)
 			getting_info_dir(ac, ".", options);
-			return (0);
-		}
 		else
-		{
 			getting_pathtype(ac, av, options);
-			if (das > 1)
-				free(options);
-		}
+		if (das > 1)
+			free(options);
 		return (0);
 	}
 	return (1);

@@ -25,6 +25,7 @@ char *checking_more_options(int num, int len, char **arg)
 				{
 					fprintf(stderr, "ls: the '%c' option is not valid\n",
 						arg[i][j]);
+					free(all);
 					exit(EXIT_FAILURE);
 				}
 			}
