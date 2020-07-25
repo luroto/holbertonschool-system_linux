@@ -9,18 +9,10 @@ int printing_options(const dfileinfo_t *n, char *options)
 {
 	struct passwd *user;
 	struct group *group;
-	int oc = (n->name[0] == '.' && _strlen(n->name) == 1);
-	int occ = (n->name[0] == '.' && n->name[1] == '.'  &&
-		   _strlen(n->name) == 2);
 
 	user = getpwuid(n->user_id);
 	group = getgrgid(n->group_id);
 
-	if ((_strchr(options, 'A') == 1) && (S_ISDIR(n->filemode)))
-	{
-		if (oc == 1 || occ == 1)
-			return (1);
-	}
 	if (_strchr(options, 'l') == 0 && _strchr(options, '1') == 0)
 	{
 		printf("%s", n->name);

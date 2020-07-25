@@ -8,7 +8,7 @@
  */
 int getting_pathtype(int ac, char **av,  char *options)
 {
-	int i, e = 0, on = options != NULL;
+	int i, e = 0, on = options != NULL, fn = 0, dn = 0;
 	dfileinfo_t *files = NULL, *dirs = NULL, *aux = NULL;
 	struct stat info;
 	char *name;
@@ -30,14 +30,9 @@ int getting_pathtype(int ac, char **av,  char *options)
 		}
 	}
 	printing_nodes(files, options);
-	if (on == 1 && _strchr(options, 'a') == 1 && _strchr(options, '1') == 0
-	    && files != NULL)
-		printf("\n");
-	if (on == 1 && _strchr(options, 'A') == 1 && _strchr(options, '1') == 0
-	    && files != NULL)
-		printf("\n");
-	if (files != NULL && dirs != NULL)
-		printf("\n");
+	fn = files != NULL;
+	dn = dirs != NULL;
+	newlines_between_types(on, fn, dn, options);
 	aux = dirs;
 	while (aux != NULL)
 	{

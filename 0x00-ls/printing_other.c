@@ -24,7 +24,7 @@ int printing_other(const dfileinfo_t *n, char *options)
 		if (oc == 1 || occ == 1)
 			return (1);
 	}
-	if (fo == 1)
+	if (fo == 1 && _strchr(options, 'A') == 0)
 		return (1);
 	if (_strchr(options, 'l') == 0 && _strchr(options, '1') == 0)
 	{

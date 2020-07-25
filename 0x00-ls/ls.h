@@ -80,4 +80,5 @@ int printing_time(const struct timespec time);
 char *checking_more_options(int num, int len,  char **arg);
 int number_of_options(int ac, char **av);
 void printing_newlines(dfileinfo_t *aux, char *options, int on);
+void newlines_between_types(int on, int fn, int dn, char *options);
 #endif
