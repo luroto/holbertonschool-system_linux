@@ -33,6 +33,9 @@ int getting_pathtype(int ac, char **av,  char *options)
 	if (on == 1 && _strchr(options, 'a') == 1 && _strchr(options, '1') == 0
 	    && files != NULL)
 		printf("\n");
+	if (on == 1 && _strchr(options, 'A') == 1 && _strchr(options, '1') == 0
+	    && files != NULL)
+		printf("\n");
 	if (files != NULL && dirs != NULL)
 		printf("\n");
 	aux = dirs;
