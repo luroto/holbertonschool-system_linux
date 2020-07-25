@@ -6,7 +6,7 @@
  *@options: selected options from av[i]
  *Return: 0
  */
-int printing_other(const dfileinfo_t *n, char *options)
+int  printing_other(const dfileinfo_t *n, char *options)
 {
 	struct passwd *user;
 	struct group *group;
@@ -40,10 +40,10 @@ int printing_other(const dfileinfo_t *n, char *options)
 	if (_strchr(options, '1') == 1 && _strchr(options, 'l') == 0)
 		printf("%s\n", n->name);
 	if (_strchr(options, 'l') == 0 && _strchr(options, '1') == 0)
-        {
-                printf("%s", n->name);
-                if (n->next != NULL)
-                        printf("  ");
+	{
+		printf("%s", n->name);
+		if (n->next != NULL)
+			printf("  ");
 	}
-	return (1);
+	return (0);
 }
