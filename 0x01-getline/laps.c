@@ -121,7 +121,7 @@ void printing_cars(car_t *h)
 	printf("Race state:\n");
 	while (h != NULL)
 	{
-		printf("Car %d [%d] laps\n", h->car_id, h->laps);
+		printf("Car %d [%d laps]\n", h->car_id, h->laps);
 		h = h->next;
 	}
 }
