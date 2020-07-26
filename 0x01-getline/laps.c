@@ -10,8 +10,12 @@ void race_state(int *id, size_t size)
 	static int clean_first;
 	size_t i;
 
-	if (head != NULL && size == 0)
-		free_all_cars(&head);
+	if (size == 0)
+	{
+		if (head != NULL)
+			free_all_cars(&head);
+		clean_first = 1;
+	}
 	if (head != NULL)
 	{
 		for (i = 0; i < size; i++)
