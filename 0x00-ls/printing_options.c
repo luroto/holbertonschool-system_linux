@@ -23,10 +23,10 @@ int printing_options(const dfileinfo_t *n, char *options)
 	{
 		printf((S_ISDIR(n->filemode)) ? "d" : "-");
 		printing_permissions(n->filemode);
-		printf(" %ld ", n->nhlks);
+		printf(" %ld", n->nhlks);
 		printf(" %s", user->pw_name);
 		printf(" %s", group->gr_name);
-		printf(" %ld ", n->size);
+		printf(" %ld", n->size);
 		printing_time(n->mod_time);
 		printf("%s\n", n->name);
 	}
