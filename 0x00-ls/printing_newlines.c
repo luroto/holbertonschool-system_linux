@@ -9,7 +9,8 @@ void printing_newlines(dfileinfo_t *aux, char *options, int on)
 {
 	if (aux->next != NULL && on == 0)
 		printf("\n");
-	if (aux->next != NULL && on == 1 && _strchr(options, '1') == 1
+	if (aux->next != NULL && on == 1 &&
+	    (_strchr(options, '1') == 1 || _strchr(options, 'l') == 1)
 	    && (_strchr(options, 'a') == 0 || _strchr(options, 'A') == 0))
 		printf("\n");
 	if (aux->next != NULL && on == 1 && (_strchr(options, 'a') == 1 ||
