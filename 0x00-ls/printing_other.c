@@ -33,7 +33,7 @@ int  printing_other(const dfileinfo_t *n, char *options)
 		printf(" %ld", n->nhlks);
 		printf(" %s", user->pw_name);
 		printf(" %s", group->gr_name);
-		printf(" %ld", n->size);
+		printf(" %ld ", n->size);
 		printing_time(n->mod_time);
 		printf("%s\n", n->name);
 	}
