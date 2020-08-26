@@ -18,7 +18,7 @@ def main():
                 usage_and_exit()
         searching = argv[2]
         replacing = argv[3]
-        replacing = replacing.ljust(len(searching), '\0')
+        replacing = replacing.ljust(len(searching), '\00')
         maps_path = "/proc/{}/maps".format(pid)
         mem_path = "/proc/{}/mem".format(pid)
         dictio = getting_maps_info(maps_path)
