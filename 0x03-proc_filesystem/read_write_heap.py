@@ -44,7 +44,7 @@ def mem_overwriting(mempath, dictio, searching, replacing):
                         memop.close()
                         print("The string {} was not found in this section"
                               .format(searching))
-                        exit()
+                        exit(1)
                 memory.seek(dictio['add_start'] + position)
                 memory.write(bytes(replacing, "ASCII"))
 
