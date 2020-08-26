@@ -69,7 +69,7 @@ def getting_maps_info(mapspath):
         if "rw" not in proc_info['perms']:
                 print("There are not permissions for reading/writting")
                 op.close()
-                exit(1)
+                exit()
         if len(addresses) == 2:
                 proc_info['add_start'] = int(addresses[0], 16)
                 proc_info['add_end'] = int(addresses[1], 16)
@@ -78,7 +78,7 @@ def getting_maps_info(mapspath):
         else:
                 print("There are not two directions!")
                 op.close()
-                exit(1)
+                exit()
 
 
 def usage_and_exit():
@@ -88,7 +88,7 @@ def usage_and_exit():
         u = "Usage: ./read_write_heap.py [PID = int][search_string]"
         ut = "[replace_string]\nPID must be an integer"
         print(u + ut)
-        sys.exit(1)
+        exit(1)
 
 
 def error_exit(e):
@@ -96,6 +96,6 @@ def error_exit(e):
         Function for printing errors and exit
         '''
         print("{}: {}".format(e.errno, e.strerror))
-        exit(1)
+        exit()
 if __name__ == "__main__":
         main()
