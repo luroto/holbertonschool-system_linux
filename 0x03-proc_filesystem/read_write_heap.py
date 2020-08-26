@@ -64,6 +64,7 @@ def getting_maps_info(mapspath):
                 if "[heap]" in each[-1]:
                         proc_info['address'] = each[0]
                         proc_info['perms'] = each[1]
+                        break
         addresses = proc_info['address'].split("-")
         if "rw" not in proc_info['perms']:
                 print("There are not permissions for reading/writting")
@@ -74,8 +75,10 @@ def getting_maps_info(mapspath):
                 proc_info['add_end'] = int(addresses[1], 16)
                 op.close()
                 return(proc_info)
-        op.close()
-        sys.exit(1)
+        else:
+                print("There are not two directions!")
+                op.close()
+                sys.exit(1)
 
 
 def usage_and_exit():
