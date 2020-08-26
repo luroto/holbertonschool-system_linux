@@ -15,7 +15,6 @@ def main():
                 usage_and_exit()
         searching = argv[2]
         replacing = argv[3]
-        replacing = replacing.ljust(len(searching))
         maps_path = "/proc/{}/maps".format(pid)
         mem_path = "/proc/{}/mem".format(pid)
         dictio = getting_maps_info(maps_path)
@@ -43,7 +42,7 @@ def mem_overwriting(mempath, dictio, searching, replacing):
                               .format(searching))
                         sys.exit(1)
                 memory.seek(dictio['add_start'] + position)
-                memory.write(bytes(replacing, "ASCII"))
+                memory.write(bytes(replacing.ljust(len(searching)), "ASCII"))
 
 
 def getting_maps_info(mapspath):
