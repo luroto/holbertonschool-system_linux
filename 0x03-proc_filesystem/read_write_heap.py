@@ -10,7 +10,10 @@ def main():
 
         if len(argv) != 4:
                 usage_and_exit()
-        pid = int(argv[1])
+        try:
+                pid = int(argv[1])
+        except ValueError as e:
+                usage_and_exit()
         if pid <= 0 or len(argv[2]) == 0 or len(argv[3]) == 0:
                 usage_and_exit()
         searching = argv[2]
@@ -79,7 +82,7 @@ def usage_and_exit():
         '''
         Generic function for printing instructions and exit
         '''
-        u = "Usage: ./read_write_heap.py [PID for the process][search_string]"
+        u = "Usage: ./read_write_heap.py [PID = int][search_string]"
         ut = "[replace_string]\nPID must be an integer"
         print(u + ut)
         sys.exit(1)
