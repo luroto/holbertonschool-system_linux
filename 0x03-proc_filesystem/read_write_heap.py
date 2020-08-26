@@ -38,7 +38,8 @@ def mem_overwriting(mempath, dictio, searching, replacing):
                         position = heap.index(bytes(searching, "ASCII"))
                 except Exception as e:
                         memop.close()
-                        error_exit(e)
+                        print("The string {} was not found in this section".format(searching))
+                        sys.exit(1)
                 memory.seek(dictio['add_start'] + position)
                 memory.write(bytes(replacing, "ASCII"))
 
