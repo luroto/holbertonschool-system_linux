@@ -23,7 +23,7 @@ def main():
         mem_path = "/proc/{}/mem".format(pid)
         dictio = getting_maps_info(maps_path)
         mem_overwriting(mem_path, dictio, searching, replacing)
-        sys.exit()
+        exit()
 
 
 def mem_overwriting(mempath, dictio, searching, replacing):
@@ -44,7 +44,7 @@ def mem_overwriting(mempath, dictio, searching, replacing):
                         memop.close()
                         print("The string {} was not found in this section"
                               .format(searching))
-                        sys.exit(1)
+                        exit(1)
                 memory.seek(dictio['add_start'] + position)
                 memory.write(bytes(replacing, "ASCII"))
 
@@ -69,7 +69,7 @@ def getting_maps_info(mapspath):
         if "rw" not in proc_info['perms']:
                 print("There are not permissions for reading/writting")
                 op.close()
-                sys.exit(1)
+                exit(1)
         if len(addresses) == 2:
                 proc_info['add_start'] = int(addresses[0], 16)
                 proc_info['add_end'] = int(addresses[1], 16)
@@ -78,7 +78,7 @@ def getting_maps_info(mapspath):
         else:
                 print("There are not two directions!")
                 op.close()
-                sys.exit(1)
+                exit(1)
 
 
 def usage_and_exit():
@@ -96,6 +96,6 @@ def error_exit(e):
         Function for printing errors and exit
         '''
         print("{}: {}".format(e.errno, e.strerror))
-        sys.exit(1)
+        exit(1)
 if __name__ == "__main__":
         main()
