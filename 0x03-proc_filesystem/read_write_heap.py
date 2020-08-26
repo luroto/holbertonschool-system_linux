@@ -42,7 +42,7 @@ def mem_overwriting(mempath, dictio, searching, replacing):
                               .format(searching))
                         sys.exit(1)
                 memory.seek(dictio['add_start'] + position)
-                memory.write(bytes(replacing.ljust(len(searching)), "ASCII"))
+                memory.write(bytes(replacing.ljust(len(searching), '\0'), "ASCII"))
 
 
 def getting_maps_info(mapspath):
