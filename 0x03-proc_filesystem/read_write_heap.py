@@ -19,7 +19,7 @@ def main():
         mem_path = "/proc/{}/mem".format(pid)
         dictio = getting_maps_info(maps_path)
         mem_overwriting(mem_path, dictio, searching, replacing)
-        exit()
+        sys.exit()
 
 
 def mem_overwriting(mempath, dictio, searching, replacing):
@@ -38,7 +38,8 @@ def mem_overwriting(mempath, dictio, searching, replacing):
                         position = heap.index(bytes(searching, "ASCII"))
                 except Exception as e:
                         memop.close()
-                        print("The string {} was not found in this section".format(searching))
+                        print("The string {} was not found in this section"
+                              .format(searching))
                         sys.exit(1)
                 memory.seek(dictio['add_start'] + position)
                 memory.write(bytes(replacing, "ASCII"))
@@ -80,7 +81,7 @@ def usage_and_exit():
         u = "Usage: ./read_write_heap.py [PID for the process][search_string]"
         ut = "[replace_string]\nPID must be an integer"
         print(u + ut)
-        exit(1)
+        sys.exit(1)
 
 
 def error_exit(e):
