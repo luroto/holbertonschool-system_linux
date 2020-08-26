@@ -14,7 +14,7 @@ def main():
                 pid = int(argv[1])
         except ValueError as e:
                 usage_and_exit()
-        if pid <= 0 or len(argv[2]) == 0 or len(argv[3]) == 0:
+        if pid <= 0:
                 usage_and_exit()
         searching = argv[2]
         replacing = argv[3]
